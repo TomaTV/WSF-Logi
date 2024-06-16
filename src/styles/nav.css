@@ -9,7 +9,6 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
 }
 
@@ -19,6 +18,7 @@
     padding: 0;
     display: flex;
     align-items: center;
+    flex: 1; /* Prend l'espace disponible pour centrer les éléments */
 }
 
 .navbar li {
@@ -68,7 +68,6 @@
 }
 
 .profile-menu {
-
     border: 1px solid #ccc;
     border-radius: 8px; /* Arrondi les bords du menu */
     position: absolute;
@@ -123,18 +122,59 @@
     transition: transform 0.5s ease-in-out;
 }
 
+/* Styles pour les petits écrans */
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
-        padding: 10px;
+        align-items: flex-start;
     }
 
     .navbar ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        display: none; /* Cacher le menu par défaut */
+        width: 100%;
+    }
+
+    .navbar.open ul {
+        display: flex; /* Afficher le menu lorsqu'il est ouvert */
     }
 
     .navbar li {
         margin: 10px 0;
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 20px; /* Positionne le hamburger en haut à droite */
+    }
+
+    .hamburger-menu span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+        transition: all 0.3s;
+    }
+
+    .profile-menu {
+        left: 50%; /* Centre horizontalement */
+        transform: translateX(-50%); /* Déplacement de moitié de la largeur du menu */
+        top: calc(100% + 10px); /* Position sous le profil */
+    }
+
+    .navbar-profile {
+        position: absolute;
+        top: 10px;
+        right: 60px; /* Place la photo de profil à côté du hamburger */
+    }
+
+    .navbar-logo img {
+        height: 80px; /* Ajustement de la hauteur du logo pour les petits écrans */
     }
 }

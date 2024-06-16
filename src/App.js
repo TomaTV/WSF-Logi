@@ -12,9 +12,14 @@ import "./styles/nav.css";
 
 const AppRoutes = ({ user, setUser }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setProfileMenuOpen(!profileMenuOpen);
   };
 
   return (
@@ -24,8 +29,8 @@ const AppRoutes = ({ user, setUser }) => {
           <div className="navbar-logo">
             <img src="/img/webschoolfactory-b.svg" alt="Logo de l'école" />
           </div>
-          <nav className="navbar">
-            <ul>
+          <nav className={`navbar ${menuOpen ? 'open' : ''}`}>
+            <ul className={menuOpen ? 'open' : ''}>
               <li>
                 <NavLink to="/home" className={({ isActive }) => (isActive ? "active" : "")}>
                   <FontAwesomeIcon icon={faHome} /> Accueil
@@ -47,11 +52,11 @@ const AppRoutes = ({ user, setUser }) => {
                 </NavLink>
               </li>
             </ul>
-            <div className="navbar-profile" onClick={toggleMenu}>
+            <div className="navbar-profile" onClick={toggleProfileMenu}>
               <img className="profile-picture" src={user.profilePicture || "/img/logo.png"} alt={`Profil de ${user.name}`} />
               <div className="profile-details">
-                {menuOpen && (
-                  <ul className="profile-menu">
+                {profileMenuOpen && (
+                  <ul className="profile-menu active">
                     <span className="profile-name">{user.name}</span><br></br>
                     <span className="profile-name">{user.email}</span>
                     <li>
@@ -62,6 +67,11 @@ const AppRoutes = ({ user, setUser }) => {
                   </ul>
                 )}
               </div>
+            </div>
+            <div className="hamburger-menu" onClick={toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </nav>
         </div>
@@ -76,7 +86,6 @@ const AppRoutes = ({ user, setUser }) => {
     </>
   );
 };
-
 function App() {
   const [user, setUser] = useState(null);
   return (
