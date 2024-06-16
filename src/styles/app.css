@@ -1,0 +1,166 @@
+.form-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: center;
+    font-family: 'Circular Std', sans-serif;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.app-select:disabled {
+    opacity: 0.1; /* Réduit l'opacité pour indiquer que l'élément est désactivé */
+    background-color: #f0f0f0; /* Change la couleur de fond */
+    cursor: not-allowed; /* Change le curseur pour indiquer que l'action n'est pas disponible */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #555;
+}
+
+.app-input, .app-select {
+    padding: 10px;
+    margin-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #F5F8FA;
+    transition: border-color 0.3s;
+}
+
+.app-input:focus, .app-select:focus {
+    outline: 3px solid #DFEBFF;
+}
+
+button[type="submit"] {
+    background-color: #5F79FC;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #5167d6;
+}
+
+.navbar-logo img {
+    height: 140px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form-content.blocked {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.notification-blocked {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-link {
+    color: #007bff; /* Couleur du lien */
+    text-decoration: none;
+    margin: 0 5px;
+}
+  
+.footer-link:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+  
+.footer-separator {
+    margin: 0 10px;
+    color: #ddd;
+}
+
+/* Media queries pour les téléphones */
+@media (max-width: 600px) {
+    .navbar-logo img {
+        height: 150px;
+        display: block;
+        margin: 20px auto;
+    }
+
+    .form-container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto; /* Modifier la hauteur automatiquement pour s'adapter au contenu */
+    }
+
+    form {
+        width: 100%;
+        max-width: 80%; /* Ajuster la largeur du formulaire */
+        text-align: center;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 50px; /* Ajout de marge en bas pour espacer du bas de l'écran */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .app-input,
+    .app-select {
+        padding: 10px;
+        margin-bottom: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 5px;
+        background-color: #F5F8FA;
+    }
+
+    .app-input:focus,
+    .app-select:focus {
+        outline: 3px solid #DFEBFF;
+    }
+
+    button[type="submit"] {
+        background-color: #5F79FC;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #5167d6;
+    }
+}

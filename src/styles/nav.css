@@ -1,0 +1,140 @@
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navbar li a:hover {
+    color: #007BFF;
+}
+
+.navbar li a svg {
+    margin-right: 8px;
+}
+
+.navbar-logo img {
+    height: 100px; /* Ajustement de la hauteur du logo */
+}
+
+.navbar-profile {
+    position: relative; /* Positionnement relatif pour le menu */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px; /* Marge à droite pour séparer la photo de profil du texte */
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-menu {
+
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Arrondi les bords du menu */
+    position: absolute;
+    z-index: 1000;
+    left: -160px; /* Positionne le menu à gauche de la photo de profil */
+    top: 60px; /* Ajustez la position verticale en fonction de la taille de la photo de profil */
+    width: 180px; /* Largeur du menu */
+    display: block !important;
+    text-align: center; /* Centre le texte à l'intérieur du menu */
+}
+
+.profile-menu li {
+    width: 100%; /* Largeur pleine pour chaque élément de liste */
+    text-align: left; /* Alignement du texte à gauche */
+}
+
+.profile-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333; /* Couleur du texte */
+}
+
+.navbar li a.active {
+    color: #007BFF;
+}
+
+.navbar li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Décale le trait bleu vers le bas */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Styles pour les liens non actifs */
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Décale le trait bleu vers le bas */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+}
