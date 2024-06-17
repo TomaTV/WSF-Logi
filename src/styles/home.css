@@ -179,7 +179,7 @@
     }
 
     .card-section {
-        width: 100%;
+        width: 80%;
     }
 
     .card-section h3 {
@@ -197,6 +197,7 @@
     .events {
         flex-direction: column;
         align-items: center;
+        width: 80%;
     }
 
     .event {
