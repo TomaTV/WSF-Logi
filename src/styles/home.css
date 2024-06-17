@@ -1,18 +1,38 @@
+
 .home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
     padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .home-title {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 56px;
+    font-weight: 700;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    transform: translateY(50px); /* Initial position hors de l'écran */
+    animation: fadeInUpTitle 2s ease-in-out forwards;
+}
+
+@keyframes fadeInUpTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .home-content {
@@ -20,36 +40,62 @@
     flex-direction: column;
     align-items: center;
     padding: 30px;
-    border-radius: 10px;
-    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.home-content:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 1);
 }
 
 .card-section {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease;
     background-color: #fff;
     margin-bottom: 20px;
-    width: 350px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff 0%, #f2f2f2 100%);
+    perspective: 1000px; /* Ajout de la perspective pour effet 3D */
 }
 
 .card-section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px); /* Effet 3D au survol */
 }
 
 .card-section h3 {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 600;
     color: #333;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .card-section p {
     font-size: 18px;
     color: #555;
     line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.card-section:hover h3, .card-section:hover p {
+    color: #007BFF;
+}
+
+.card-icon {
+    color: #007BFF;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-section:hover .card-icon {
+    transform: scale(1.1);
 }
 
 .timer-bar {
@@ -65,27 +111,58 @@
     0% {
         width: 100%;
     }
-
     100% {
         width: 0;
     }
 }
 
-.image-section {
-    margin-top: 20px;
-}
-
-.image-section img {
+.events-section, .contact-section {
     width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 900px;
+    margin-bottom: 40px;
 }
 
-.image-section img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+.section-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 1.5s ease;
+}
+
+.events {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.event {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.event:hover {
+    transform: translateY(-10px);
+    background-color: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Effet de surbrillance au survol */
+}
+
+.event h4 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.contact-section p {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
 }
 
 @media (max-width: 600px) {
@@ -94,11 +171,15 @@
     }
 
     .home-title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
-    .home-content p {
-        font-size: 16px;
+    .home-content {
+        padding: 20px;
+    }
+
+    .card-section {
+        width: 100%;
     }
 
     .card-section h3 {
@@ -107,5 +188,39 @@
 
     .card-section p {
         font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .events {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

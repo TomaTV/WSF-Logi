@@ -60,12 +60,6 @@ button[type="submit"]:hover {
     background-color: #5167d6;
 }
 
-.navbar-logo img {
-    height: 140px;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
 .form-content.blocked {
     pointer-events: none;
     opacity: 0.5;
