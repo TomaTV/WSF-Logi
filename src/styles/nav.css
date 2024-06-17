@@ -62,7 +62,7 @@
     color: #007BFF;
 }
 
-.navbar li a.active::after {
+.navbar li a.active:not([href="/settings"])::after {
     content: '';
     position: absolute;
     bottom: -5px;

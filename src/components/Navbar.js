@@ -61,7 +61,7 @@ const Navbar = ({ user, setUser }) => {
                 <span className="profile-name">{user.name}</span><br />
                 <span className="profile-email">{user.email}</span>
                 <li>
-                <NavLink to="/settings" className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink to="/settings">
                   <FontAwesomeIcon icon={faGear} /> Paramètres
                 </NavLink>
                 </li>

@@ -72,8 +72,8 @@ function Settings({ user }) {
       <section className="settings-section">
         <h2>Compte</h2>
         <div className="settings-item">
-          <p>Username: <strong>{user.name}</strong></p>
-          <p>Email: <strong>{user.email}</strong></p>
+          <p>Prénom NOM : <strong>{user.name}</strong></p>
+          <p>Email : <strong>{user.email}</strong></p>
         </div>
       </section>
 

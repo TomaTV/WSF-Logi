@@ -20,8 +20,7 @@
 }
 
 .settings-item label {
-  display: block;
-  margin-bottom: 5px;
+  display: flex; /* Utilisation de flexbox pour aligner verticalement */
   font-size: 1em;
   color: #555;
 }
@@ -29,7 +28,6 @@
 .settings-item input[type="checkbox"],
 .settings-item input[type="radio"] {
   margin-right: 5px;
-  vertical-align: middle;
 }
 
 .settings-item select,
