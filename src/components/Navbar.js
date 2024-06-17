@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faPizzaSlice, faClipboard, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPizzaSlice, faClipboard, faSignOutAlt, faGear } from '@fortawesome/free-solid-svg-icons';
 import '../styles/nav.css';
 
 const Navbar = ({ user, setUser }) => {
@@ -60,6 +60,11 @@ const Navbar = ({ user, setUser }) => {
               <ul className="profile-menu active">
                 <span className="profile-name">{user.name}</span><br />
                 <span className="profile-email">{user.email}</span>
+                <li>
+                <NavLink to="/settings" className={({ isActive }) => (isActive ? 'active' : '')}>
+                  <FontAwesomeIcon icon={faGear} /> Paramètres
+                </NavLink>
+                </li>
                 <li>
                   <NavLink to="/" onClick={() => setUser(null)} className={({ isActive }) => (isActive ? 'active' : '')}>
                     <FontAwesomeIcon icon={faSignOutAlt} /> Déconnexion

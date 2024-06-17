@@ -6,6 +6,7 @@ import Form from './components/FormWEC';
 import FormRDD from './components/FormRDD';
 import FormPizza from './components/FormPizza';
 import Navbar from './components/Navbar';
+import Settings from './components/Settings';
 import './styles/app.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/form-wec" element={user ? <Form user={user} /> : <Login setUser={setUser} />} />
           <Route path="/form-pizza" element={user ? <FormPizza user={user} /> : <Login setUser={setUser} />} />
           <Route path="/form-rdd" element={user ? <FormRDD user={user} /> : <Login setUser={setUser} />} />
+          <Route path="/settings" element={user ? <Settings user={user} /> : <Login setUser={setUser} />} />
         </Routes>
       </div>
     </Router>

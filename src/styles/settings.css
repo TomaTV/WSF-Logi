@@ -1,0 +1,62 @@
+.settings-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.settings-section {
+  margin-bottom: 20px;
+}
+
+.settings-section h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.settings-item {
+  margin-top: 10px;
+}
+
+.settings-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1em;
+  color: #555;
+}
+
+.settings-item input[type="checkbox"],
+.settings-item input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.settings-item select,
+.settings-item input[type="text"],
+.settings-item input[type="email"],
+.settings-item button {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.settings-footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.settings-footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 10px;
+  }
+}
