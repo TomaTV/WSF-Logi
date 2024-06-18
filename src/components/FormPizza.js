@@ -77,11 +77,24 @@ function FormPizza({ user }) {
               required
             >
               <option value="">Sélectionner</option>
-              <option value="Margherita">Margherita</option>
-              <option value="Pepperoni">Pepperoni</option>
-              <option value="Supreme">Supreme</option>
-              <option value="Hawaiian">Hawaiian</option>
-              <option value="Texas BBQ">Texas BBQ</option>
+              <option value="4 Fromages">4 Fromages (mozza, chèvre, emmental, Fourme d'Ambert) - Veggie</option>
+              <option value="Chèvre Miel">Chèvre miel - Veggie</option>
+              <option value="Marguerita">Marguerita - Veggie</option>
+              <option value="Vegan Marguerita">Vegan Marguerita (sans mozza)</option>
+              <option value="Classique Jambon">Classique Jambon</option>
+              <option value="Originale Pepperoni">Originale Pepperoni</option>
+              <option value="Spéciale Merguez">Spéciale Merguez</option>
+              <option value="Bacon Groovy">Bacon Groovy</option>
+              <option value="Cannibale">Cannibale (poulet + merguez + bœuf)</option>
+              <option value="Deluxe">Deluxe (Bœuf)</option>
+              <option value="Diavola">Diavola (Bœuf)</option>
+              <option value="Diavola Pepperoni">Diavola Pepperoni</option>
+              <option value="Extravaganzza">Extravaganzza (pepperoni, jambon, bœuf)</option>
+              <option value="Forestière">Forestière (lardons, jambon)</option>
+              <option value="Hypnotika">Hypnotika (merguez, poulet)</option>
+              <option value="Indienne">Indienne (poulet)</option>
+              <option value="Kebab">Kebab</option>
+              <option value="Saumoneta">Saumoneta (saumon)</option>
             </select>
           </label>
         </div>

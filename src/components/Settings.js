@@ -57,7 +57,7 @@ function Settings({ user }) {
       </section>
 
       {/* Section Language */}
-      <section className="settings-section">
+      <section className="settings-section-langage">
         <h2>Langage</h2>
         <div className="settings-item">
           <select value={language} onChange={handleLanguageChange}>

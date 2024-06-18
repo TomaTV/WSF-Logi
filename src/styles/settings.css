@@ -2,7 +2,6 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
 }
 
 .settings-section {
@@ -10,6 +9,17 @@
 }
 
 .settings-section h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.settings-section-langage {
+  margin-bottom: 20px;
+  max-width: 100px;
+}
+
+.settings-section-langage h2 {
   font-size: 1.2em;
   color: #333;
   margin-bottom: 10px;

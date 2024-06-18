@@ -1,24 +1,11 @@
-/* Navbar Container */
 .navbar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
     padding: 10px 20px;
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); *\ Ajout d'une ombre */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-/* Navbar Logo */
-.navbar-logo img {
-    height: 140px;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -31,8 +18,7 @@
     padding: 0;
     display: flex;
     align-items: center;
-    flex: 1;
-    justify-content: flex-start; /* Centrer à gauche */
+    flex: 1; /* Prend l'espace disponible pour centrer les éléments */
 }
 
 .navbar li {
@@ -58,39 +44,12 @@
     margin-right: 8px;
 }
 
-.navbar li a.active {
-    color: #007BFF;
+.navbar-logo img {
+    height: 100px; /* Ajustement de la hauteur du logo */
 }
 
-.navbar li a.active:not([href="/settings"])::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #007BFF;
-    transform: scaleX(1);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
-
-.navbar li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #007BFF;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Navbar Profile */
 .navbar-profile {
-    position: relative;
+    position: relative; /* Positionnement relatif pour le menu */
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -100,109 +59,85 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 10px; /* Marge à droite pour séparer la photo de profil du texte */
 }
 
 .profile-details {
     display: flex;
     flex-direction: column;
-    padding: 5px; /* Ajout de padding pour l'espace */
 }
 
 .profile-menu {
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 8px; /* Arrondi les bords du menu */
     position: absolute;
     z-index: 1000;
-    left: -160px;
-    top: 60px;
-    width: 180px;
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: none;
-    text-align: center;
-}
-
-.profile-menu.active {
-    display: block;
-    padding-top: 10px;
-}
-
-.navbar-logo img {
-    height: 140px;
-    margin-left: 20px;
-    margin-top: 20px;
+    left: -160px; /* Positionne le menu à gauche de la photo de profil */
+    top: 60px; /* Ajustez la position verticale en fonction de la taille de la photo de profil */
+    width: 180px; /* Largeur du menu */
+    display: block !important;
+    text-align: center; /* Centre le texte à l'intérieur du menu */
 }
 
 .profile-menu li {
-    width: 100%;
+    width: 100%; /* Largeur pleine pour chaque élément de liste */
+    text-align: left; /* Alignement du texte à gauche */
 }
 
 .profile-menu li a {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
-    text-align: left;
+    color: #333; /* Couleur du texte */
 }
 
-.profile-name {
-    font-weight: bold;
-    margin: 5px 0; /* Ajout de marge */
+.navbar li a.active {
+    color: #007BFF;
 }
 
-.profile-email {
-    font-size: 14px;
-    color: #666;
+.navbar li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Décale le trait bleu vers le bas */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: relative;
-    z-index: 1001;
-}
-
-.hamburger-menu span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: all 0.3s;
-}
-
-.hamburger-menu.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+/* Styles pour les liens non actifs */
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Décale le trait bleu vers le bas */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
 }
 
 /* Styles pour les petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
     }
 
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none;
+        display: none; /* Cacher le menu par défaut */
         width: 100%;
-        margin-top: 10px;
     }
 
     .navbar.open ul {
-        display: flex;
+        display: flex; /* Afficher le menu lorsqu'il est ouvert */
     }
 
     .navbar li {
@@ -210,20 +145,13 @@
         width: 100%;
     }
 
-    .navbar li a {
-        width: 100%;
-        padding: 10px 15px;
-        box-sizing: border-box;
-    }
-
     .hamburger-menu {
         display: flex;
         flex-direction: column;
         cursor: pointer;
         position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
+        top: 10px;
+        right: 20px; /* Positionne le hamburger en haut à droite */
     }
 
     .hamburger-menu span {
@@ -234,31 +162,19 @@
         transition: all 0.3s;
     }
 
-    .hamburger-menu.open span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger-menu.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger-menu.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .navbar-logo img {
-        height: 40px;
+    .profile-menu {
+        left: 50%; /* Centre horizontalement */
+        transform: translateX(-50%); /* Déplacement de moitié de la largeur du menu */
+        top: calc(100% + 10px); /* Position sous le profil */
     }
 
     .navbar-profile {
         position: absolute;
-        top: 20px;
-        right: 60px;
+        top: 10px;
+        right: 60px; /* Place la photo de profil à côté du hamburger */
     }
 
-    .profile-menu {
-        left: 50%;
-        transform: translateX(-50%);
-        top: calc(100% + 10px);
+    .navbar-logo img {
+        height: 80px; /* Ajustement de la hauteur du logo pour les petits écrans */
     }
 }
