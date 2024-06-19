@@ -95,7 +95,7 @@
     color: #007BFF;
 }
 
-.navbar li a.active::after {
+.navbar li a.active:not(.profile-details li a.active):after {
     content: '';
     position: absolute;
     bottom: -5px; /* Décale le trait bleu vers le bas */
